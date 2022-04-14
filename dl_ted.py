@@ -7,8 +7,17 @@ import re
 # For downloading mp4
 from urllib.request import urlretrieve
 
+# For argument parsing, i.e, to generalize the code for using multiple URLs
+import sys
+
+# Handling exceptions
+if len(sys.argv) > 1:
+    url = sys.argv[1]
+else:
+    sys.exit("Error: Please Enter a valid TED talk URL")
+
 # URL for a TED talk
-url = "https://www.ted.com/talks/ashley_m_grice_the_power_of_purpose_in_business"
+# url = "https://www.ted.com/talks/ashley_m_grice_the_power_of_purpose_in_business"
 
 # sending a GET request and storing the response received
 r = requests.get(url)
